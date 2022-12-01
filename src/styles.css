@@ -28,3 +28,9 @@ body {
     background:#8360c3 !important;    
 } */
 .custom-option:not(:checked) { background: #fff !important; }
+
+@media only screen and (max-width: 576px){
+.flex-sm-wrap{
+    flex-wrap: wrap;
+}
+}
