@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpApiService } from '../http-api.service';
 
 @Component({
   selector: 'app-recommendation-engine',
@@ -6,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommendation-engine.component.css']
 })
 export class RecommendationEngineComponent implements OnInit {
-  model: any = {"inputType":"","gain":""};
-  constructor() { }
+  model: any = { "inputType": "", "gain": "" };
+  constructor(private httpApiService: HttpApiService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+  async onSubmit() {
+    alert(await this.httpApiService.post("", this.model).toPromise());
   }
 }
