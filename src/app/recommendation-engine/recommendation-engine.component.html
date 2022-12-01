@@ -14,8 +14,8 @@
           </div>
           <hr class="mt-0">
         </div>
-        <div class="col-md-12 mb-3">
-          <div class="py-3 px-4">
+        <div class="col-md-12 my-3">
+          <div class="px-4">
             <h3 class="font-bold-bolder mb-3">Please Select the input type</h3>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                    [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" >
@@ -26,18 +26,20 @@
           </div>
         </div>
         <div class="col-md-12 mb-3">
-          <div class="py-3 px-4">
+          <div class="px-4">
             <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
             <select class="form-select form-select-lg mb-3" [(ngModel)]="model.gain" #gain="ngModel" name="gain" 
                     aria-label=".form-select-lg example">
               <option class="custom-option" selected value="">Select Gain</option>
               <option class="custom-option" value="1">Yes</option>
               <option class="custom-option" value="2">No</option>
-            </select>
+            </select>            
           </div>
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div class="col-md-12 mb-3">
+          <div class="d-flex justify-content-end pb-3 px-4">
+            <button class="btn btn-lg theme-bg-clr1 text-white" type="submit">Submit</button>
+          </div>
         </div>
       </div>
     </div>

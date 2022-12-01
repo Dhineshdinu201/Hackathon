@@ -19,9 +19,12 @@ body {
     font-weight: 900 !important;
 }
 .theme-clr1{
-    color:#8360c3;
+    color:#8360c3 !important;
 }
-.custom-option:hover, .custom-option:checked, .custom-option:focus{
+.theme-bg-clr1{
+    background-color:#8360c3 !important;
+}
+/* .custom-option:hover, .custom-option:checked, .custom-option:focus{
     background:#8360c3 !important;    
-}
+} */
 .custom-option:not(:checked) { background: #fff !important; }
