@@ -1,39 +1,47 @@
 <div class="container py-5">
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="card bg-white border-0 shadow">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="py-3 px-4">
-                    <div class="d-flex justify-content-between">
-                        <div><h1 class="magic-text font-bold-xbolder">AI Recommendation Engine</h1></div>
-                    <div class="align-self-center">
-                        <label><i class="fas fa-user-tie me-2 theme-clr1"></i><b><span class="me-2">Hello!</span><span class="theme-clr1">Vetrivel Muthusamy</span></b></label></div>
-                    </div>
-                
+      <div class="row">
+        <div class="col-md-12">
+          <div class="py-3 px-4">
+            <div class="d-flex justify-content-between">
+              <div><h1 class="magic-text font-bold-xbolder">AI Recommendation Engine</h1></div>
+              <div class="align-self-center">
+                <label><i class="fas fa-user-tie me-2 theme-clr1"></i><b><span class="me-2">Hello!</span><span class="theme-clr1">Vetrivel Muthusamy</span></b></label>
+              </div>
             </div>
-                <hr class="mt-0">
-            </div>
-            <div class="col-md-12 mb-3">      
-                <div class="py-3 px-4">          
-                        <h3 class="font-bold-bolder mb-3">Please Select the input type</h3>
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                            <option class="custom-option" selected>Select input type</option>
-                            <option class="custom-option" value="1">Mic</option>
-                            <option class="custom-option" value="2">Line</option>
-                        </select>                 
-                </div>
-            </div>
-            <div class="col-md-12 mb-3">      
-                <div class="py-3 px-4">          
-                        <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                            <option class="custom-option" selected>Select Gain</option>
-                            <option class="custom-option" value="1">Yes</option>
-                            <option class="custom-option" value="2">No</option>
-                        </select>                 
-                </div>
-            </div>
+
+          </div>
+          <hr class="mt-0">
         </div>
+        <div class="col-md-12 mb-3">
+          <div class="py-3 px-4">
+            <h3 class="font-bold-bolder mb-3">Please Select the input type</h3>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                   [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" >
+              <option class="custom-option" selected value="">Select input type</option>
+              <option class="custom-option" value="1">Mic</option>
+              <option class="custom-option" value="2">Line</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="py-3 px-4">
+            <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
+            <select class="form-select form-select-lg mb-3" [(ngModel)]="model.gain" #gain="ngModel" name="gain" 
+                    aria-label=".form-select-lg example">
+              <option class="custom-option" selected value="">Select Gain</option>
+              <option class="custom-option" value="1">Yes</option>
+              <option class="custom-option" value="2">No</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </div>
     </div>
+  </form>
 </div>
 
 

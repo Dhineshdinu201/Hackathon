@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommendation-engine.component.css']
 })
 export class RecommendationEngineComponent implements OnInit {
-
+  model: any = {"inputType":"","gain":""};
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+  }
 }
