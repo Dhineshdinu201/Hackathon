@@ -4,8 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\recommendation-engine",
+    "\\src\\assets",
+    "\\src\\assets\\Mic",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\recommendation-engine\\recommendation-engine.component.ts",
+  "SelectedNode": "\\src\\assets\\products.json",
   "PreviewInSolutionExplorer": false
 }
