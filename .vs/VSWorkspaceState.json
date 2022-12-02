@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\recommendation-engine",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src\\app\\recommendation-engine\\recommendation-engine.component.ts",
+  "PreviewInSolutionExplorer": false
+}

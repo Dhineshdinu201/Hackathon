@@ -30,7 +30,7 @@
             <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
             <select class="form-select form-select-lg mb-3" [(ngModel)]="model.gain" #gain="ngModel" name="gain" 
                     aria-label=".form-select-lg example">
-              <option class="custom-option" selected value="">Select Gain</option>
+              <option class="custom-option" selected value="0">Select Gain</option>
               <option class="custom-option" value="1">Yes</option>
               <option class="custom-option" value="2">No</option>
             </select>
@@ -38,6 +38,11 @@
         </div>
         <div>
           <button type="submit">Submit</button>
+        </div>
+        <div *ngIf="result">
+          <!--{{result?.Results?.output1?.value?.Values[0][2]}}-->
+          <div *ngIf="result?.Results?.output1?.value?.Values[0][2]=='1'">Gain ok</div>
+          <div *ngIf="result?.Results?.output1?.value?.Values[0][2]!='1'">Gain not ok</div>
         </div>
       </div>
     </div>

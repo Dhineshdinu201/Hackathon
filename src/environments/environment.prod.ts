@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl:""
+  baseUrl:"https://ussouthcentral.services.azureml.net/"
 
 };

@@ -7,13 +7,14 @@ import { HttpApiService } from '../http-api.service';
   styleUrls: ['./recommendation-engine.component.css']
 })
 export class RecommendationEngineComponent implements OnInit {
-  model: any = { "inputType": "", "gain": "" };
+  model: any = { "inputType": "", "gain": 0, "userId": "1" };
+  result: any;
   constructor(private httpApiService: HttpApiService) { }
-
   ngOnInit(): void {
   }
 
   async onSubmit() {
-    alert(await this.httpApiService.post("", this.model).toPromise());
+    this.result = await this.httpApiService.post("api/Hackathon", this.model).toPromise()
+
   }
 }
