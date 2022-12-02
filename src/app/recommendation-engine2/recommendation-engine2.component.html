@@ -42,17 +42,25 @@
           </div>
 
         </div>
+        <button (click)="filter()">Filter</button>
         <div class="col-md-4" *ngFor="let product of products">
          {{product|json}}
-          <img [src]="product.imageUrl"/>
+          <br/><br /><br />
+          <!--<img [src]="product.imageUrl"/>-->
         </div>
-        <!--<div *ngIf="result">-->
-        <!--{{result?.Results?.output1?.value?.Values[0][2]}}-->
-        <!--<div *ngIf="model.inputType==1">MIC=></div>
+        <div *ngIf="result">
+        {{result?.Results?.output1?.value?.Values[0][2]}}
+        <div *ngIf="model.inputType==1">MIC=></div>
           <div *ngIf="model.inputType==2">LINE=></div>
           <div *ngIf="result?.Gain=='1'">Gain <button type="button" (click)="recommentHpf(result?.Gain)">Recommend More..</button></div>
           <div *ngIf="result?.HPF=='1'">HPF</div>
-        </div>-->
+        </div>
+
+        <div>
+          <div>MIC=></div>
+          <div>Gain <button type="button" (click)="recommentHpf(result?.Gain)">Recommend More..</button></div>
+          <div>HPF</div>
+        </div>
       </div>
     </div>
   </form>
