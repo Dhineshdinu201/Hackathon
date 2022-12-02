@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-12 my-3">
           <div class="px-4">
-            <h3 class="font-bold-bolder mb-3">Please Select the input type</h3>
+            <h3 class="font-bold-bolder mb-3">Please select the input type</h3>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                    [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" >
               <option class="custom-option" selected value="">Select input type</option>
@@ -25,7 +25,7 @@
             </select>
           </div>
         </div>
-        <div class="col-md-12 mb-3">
+        <!--<div class="col-md-12 mb-3">
           <div class="px-4">
             <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
             <select class="form-select form-select-lg mb-3" [(ngModel)]="model.gain" #gain="ngModel" name="gain" 
@@ -35,16 +35,18 @@
               <option class="custom-option" value="2">No</option>
             </select>            
           </div>
-        </div>
+        </div>-->
         <div class="col-md-12 mb-3">
           <div class="d-flex justify-content-end pb-3 px-4">
-            <button class="btn btn-lg theme-bg-clr1 text-white" type="submit">Submit</button>
+            <button class="btn btn-lg theme-bg-clr1 text-white" type="submit">Recommend</button>
           </div>
         </div>
         <div *ngIf="result">
           <!--{{result?.Results?.output1?.value?.Values[0][2]}}-->
-          <div *ngIf="result?.Results?.output1?.value?.Values[0][2]=='1'">Gain ok</div>
-          <div *ngIf="result?.Results?.output1?.value?.Values[0][2]!='1'">Gain not ok</div>
+          <div *ngIf="model.inputType==1">MIC=></div>
+          <div *ngIf="model.inputType==2">LINE=></div>
+          <div *ngIf="result?.Gain=='1'">Gain <button type="button" (click)="recommentHpf(result?.Gain)">Recommend More..</button></div>
+          <div *ngIf="result?.HPF=='1'">HPF</div>
         </div>
       </div>
     </div>
