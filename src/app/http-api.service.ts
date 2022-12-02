@@ -18,4 +18,7 @@ export class HttpApiService {
   post(url: string, data: any) {
     return this.http.post(this.baseUrl + url, data, this.options);
   }
+  getProductJson() {
+    return this.http.get<any[]>("assets/products.json");
+  }
 }
