@@ -17,39 +17,39 @@
         <div class="col-md-12 my-3">
           <div class="px-4">
             <h3 class="font-bold-bolder mb-3">Please select the input type</h3>
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+            <div class="input-group mb-3 input-group-lg">
+              <select class="form-select" aria-label=".form-select-lg example"
                    [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" (ngModelChange)="onInputTypeChange()">
               <option class="custom-option" selected value="">Select input type</option>
               <option class="custom-option" value="1">Mic</option>
               <option class="custom-option" value="2">Line</option>
-            </select>
+            </select>           
+              <button class="btn theme-bg-clr1 text-white" type="submit">Recommend</button>
+             </div>           
           </div>
         </div>
-        <!--<div class="col-md-12 mb-3">
-          <div class="px-4">
-            <h3 class="font-bold-bolder mb-3">Please Select the Gain</h3>
-            <select class="form-select form-select-lg mb-3" [(ngModel)]="model.gain" #gain="ngModel" name="gain" 
-                    aria-label=".form-select-lg example">
-              <option class="custom-option" selected value="0">Select Gain</option>
-              <option class="custom-option" value="1">Yes</option>
-              <option class="custom-option" value="2">No</option>
-            </select>            
-          </div>
-        </div>-->
-        <div class="col-md-12 mb-3">
-          <div class="d-flex justify-content-end pb-3 px-4">
-            <button class="btn btn-lg theme-bg-clr1 text-white" type="submit">Recommend</button>
-          </div>
-        </div>
+      
         <div *ngIf="result && showResult">
-          <!--{{result?.Results?.output1?.value?.Values[0][2]}}-->
-          <span *ngIf="model.inputType==1">MIC=></span>
-          <span *ngIf="model.inputType==2">LINE=></span>
-          <span *ngIf="result?.Gain=='1'">Gain <button type="button" *ngIf="showButton" (click)="recommentHpf(result?.Gain)">Recommend More..</button>
-          <span *ngIf="!showButton">=></span>
-          </span>
-          <span *ngIf="result?.HPF=='1'">HPF</span>
+              <div class="px-4 py-4 d-flex justify-content-center align-items-center">
+            <ng-container *ngIf="model.inputType==1">
+          <div class="theme-clr2 font-bold-bolder px-4 border-theme3 rounded font-24">MIC</div> 
+          <div class="d-flex align-items-center"><div class="wire-before border-start-0"></div><div class="wire"></div><div class="wire-after border-end-0"></div></div>
+        </ng-container>  
+        <ng-container *ngIf="model.inputType==2">
+          <div class="theme-clr2 font-bold-bolder px-4 border-theme3 rounded font-24">LINE</div>
+          <div class="d-flex align-items-center"><div class="wire-before border-start-0"></div><div class="wire"></div><div class="wire-after border-end-0"></div></div>
+        </ng-container>     
+        <ng-container *ngIf="result?.Gain=='1'">
+          <div class="theme-clr2 font-bold-bolder px-4 border-theme3 rounded font-24">Gain </div>
+          <div *ngIf="!showButton" class="d-flex align-items-center"><div class="wire-before border-start-0"></div><div class="wire"></div><div class="wire-after border-end-0"></div>
+        </div>     
+          </ng-container>            
+          <div *ngIf="result?.HPF=='1'" class="theme-clr2 font-bold-bolder px-4 border-theme3 rounded font-24">HPF</div>
         </div>
+        <div *ngIf="showButton" class="d-flex justify-content-center pb-4">
+          <button type="button" class="btn theme-bg-clr2 text-white font-bold-bolder"  (click)="recommentHpf(result?.Gain)">Recommend More</button>
+         </div>
+      </div>
       </div>
     </div>
   </form>

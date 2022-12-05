@@ -6,6 +6,9 @@ body {
     color: #3f3844 !important;
     min-height:100vh;
 }
+.font-24{
+    font-size:24px;
+}
 .font-bold-light{
     font-weight: 200 !important;
 }
@@ -21,9 +24,25 @@ body {
 .theme-clr1{
     color:#8360c3 !important;
 }
+.theme-clr2{
+    color:#e86f97 !important;
+}
+.theme-clr3{
+    color:#2ebf91 !important;
+}
 .theme-bg-clr1{
     background-color:#8360c3 !important;
 }
+.theme-bg-clr2{
+    background-color:#e86f97 !important;
+}
+.border-theme2{
+    border: 2px solid #e86f97 !important;
+}
+.border-theme3{
+    border: 2px solid #2ebf91 !important;
+}
+
 /* .custom-option:hover, .custom-option:checked, .custom-option:focus{
     background:#8360c3 !important;    
 } */
