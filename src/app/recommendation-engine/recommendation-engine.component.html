@@ -18,7 +18,7 @@
           <div class="px-4">
             <h3 class="font-bold-bolder mb-3">Please select the input type</h3>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-                   [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" >
+                   [(ngModel)]="model.inputType" #inputType="ngModel" name="inputType" (ngModelChange)="onInputTypeChange()">
               <option class="custom-option" selected value="">Select input type</option>
               <option class="custom-option" value="1">Mic</option>
               <option class="custom-option" value="2">Line</option>
@@ -41,12 +41,14 @@
             <button class="btn btn-lg theme-bg-clr1 text-white" type="submit">Recommend</button>
           </div>
         </div>
-        <div *ngIf="result">
+        <div *ngIf="result && showResult">
           <!--{{result?.Results?.output1?.value?.Values[0][2]}}-->
-          <div *ngIf="model.inputType==1">MIC=></div>
-          <div *ngIf="model.inputType==2">LINE=></div>
-          <div *ngIf="result?.Gain=='1'">Gain <button type="button" (click)="recommentHpf(result?.Gain)">Recommend More..</button></div>
-          <div *ngIf="result?.HPF=='1'">HPF</div>
+          <span *ngIf="model.inputType==1">MIC=></span>
+          <span *ngIf="model.inputType==2">LINE=></span>
+          <span *ngIf="result?.Gain=='1'">Gain <button type="button" *ngIf="showButton" (click)="recommentHpf(result?.Gain)">Recommend More..</button>
+          <span *ngIf="!showButton">=></span>
+          </span>
+          <span *ngIf="result?.HPF=='1'">HPF</span>
         </div>
       </div>
     </div>
